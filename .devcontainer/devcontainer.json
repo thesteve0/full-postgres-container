@@ -9,7 +9,7 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": ["db:5432"],
+	"forwardPorts": ["5432"],
 
 	// Configure tool-specific properties.
 	// "customizations": {},
