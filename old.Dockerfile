@@ -1,4 +1,5 @@
-FROM just-postgis
+FROM docker.io/postgres:16.1-bookworm
+
 LABEL maintainer="Steve Pousty"
 
 ENV POSTGIS_MAJOR 3
