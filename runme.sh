@@ -1,6 +1,5 @@
 #!/bin/sh
 
-su postgres
 
 initdb
 
