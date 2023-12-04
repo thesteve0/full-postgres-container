@@ -11,7 +11,7 @@ psql workshop
 # Put syntax here
 
 --return text
-select json_content #>> 'title' from natural_events limit 1;
+select json_content #>> '{title' from natural_events limit 1;
 
 --return json object
 select json_content #> '{title}' from natural_events limit 1;
@@ -65,7 +65,7 @@ select begin_date_time, event_narrative from se_details where to_tsvector('engli
 select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('hail <2> grapefruit');
 
 -- compound text query
-select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('hail <2> grapefruit'); 
+select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('(grapefruit | golf:* ) <2> hail');
 ```
 
 ---
@@ -96,6 +96,9 @@ select statefp, county_name, count(*) from all_counties group by statefp, county
 -- then full query
 with all_counties as (
     select geo.statefp, geo.county_name, se.locationid from county_geometry as geo, se_locations as se where ST_intersects(geo.the_geom, ST_Buffer(se.the_geom, 12500.0)) limit 200
+)
+select statefp, county_name, count(*) from all_counties group by statefp, county_name order by statefp, count(*) DESC;
+
 
 ```
 
@@ -134,7 +137,7 @@ $$ LANGUAGE 'plpython3u';
 -- call the function
 SELECT test_rand(5, 1510);
 
--- steps to add numpy to our postgres
+-- steps to add numpy to our postgres - not in image
 \q
 
 in the shell
