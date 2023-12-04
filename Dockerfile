@@ -12,6 +12,7 @@ RUN apt-get update \
            postgresql-15-plr \
            postgresql-15-pgvector \
            postgresql-plpython3-15 \
+           python3 python3-pip wget curl\
       && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /docker-entrypoint-initdb.d
