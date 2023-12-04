@@ -3,7 +3,7 @@
 {
 	"name": "pg-workshop",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "ghcr.io/thesteve0/pg16-full-workshop:latest",
+	"image": "ghcr.io/thesteve0/pg16-full:latest",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
