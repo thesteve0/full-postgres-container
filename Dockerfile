@@ -16,8 +16,8 @@ RUN apt-get update \
       && apt-get install -y --no-install-recommends \
            # ca-certificates: for accessing remote raster files;
            #   fix: https://github.com/postgis/docker-postgis/issues/307
-           ca-certificates \
-           \
+           postgresql-postgis \
+           postgresql-postgis-scripts \
            postgresql-15-plr \
            postgresql-15-pgvector \
            postgresql-plpython3-15 \
