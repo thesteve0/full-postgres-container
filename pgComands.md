@@ -137,27 +137,6 @@ $$ LANGUAGE 'plpython3u';
 -- call the function
 SELECT test_rand(5, 1510);
 
--- steps to add numpy to our postgres - not in image
-\q
-
-in the shell
-pip3 install numpy
-
-log back in 
-
-psql workshop
-
--- now back in postgres
-CREATE OR REPLACE FUNCTION testnp () RETURNS int[][] 
-    AS $$ 
-        import numpy as np 
-        a = np.arange(15).reshape(3, 5).tolist()
-        return a 
-    $$ LANGUAGE 'plpython3u';
-
--- use the function
-SELECT testnp();
-
 ```
 ---
 
