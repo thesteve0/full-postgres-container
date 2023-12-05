@@ -2,7 +2,7 @@
 # NOTE: THIS DOCKERFILE IS GENERATED VIA "make update"! PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM postgres:15-bullseye
+FROM docker.io/postgis/postgis:15-3.4
 
 LABEL maintainer="PostGIS Project - https://postgis.net" \
       org.opencontainers.image.description="PostGIS 3.4.0+dfsg-1.pgdg110+1 spatial database extension with PostgreSQL 15 bullseye" \
@@ -18,8 +18,6 @@ RUN apt-get update \
            #   fix: https://github.com/postgis/docker-postgis/issues/307
            ca-certificates \
            \
-           postgresql-15-postgis-3 \
-           postgresql-15-postgis-3-scripts \
            postgresql-15-plr \
            postgresql-15-pgvector \
            postgresql-plpython3-15 \
