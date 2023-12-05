@@ -9,11 +9,7 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": ["5432"],
-
-	"containerEnv": {
-		"POSTGRES_PASSWORD": "test"
-	},
+	"forwardPorts": ["5432"],S
 
 	// Configure tool-specific properties.
 	// "customizations": {},
